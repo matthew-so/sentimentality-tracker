@@ -3,11 +3,6 @@ import os
 import pygame.camera
 import time
 import csv
-import io
-import os
-import pygame.camera
-import time
-import csv
 
 # Imports the Google Cloud client library
 from google.cloud import vision
@@ -19,7 +14,7 @@ def take_picture():
 
 
 if __name__ == '__main__':
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/matthew/PycharmProjects/video_capture/My First Project-b5e1e25e8952.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/matthew/Documents/My First Project-b5e1e25e8952.json"
 
     pygame.init()
     pygame.camera.init()
@@ -107,8 +102,9 @@ if __name__ == '__main__':
         num_faces = 0
         for face in faces:
             temp = max(likelihood_name[face.anger_likelihood], likelihood_name[face.joy_likelihood], likelihood_name[face.surprise_likelihood])
+            avg = ((num_faces - 1) * (avg) + temp) / num_faces
             num_faces += 1
-        avg = ((num_faces - 1) * (avg) + temp) / num_faces
+
 
         # Prints average of facial data
         print(avg)
