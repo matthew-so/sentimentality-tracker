@@ -108,7 +108,9 @@ if __name__ == '__main__':
         for face in faces:
             temp = max(likelihood_name[face.anger_likelihood], likelihood_name[face.joy_likelihood], likelihood_name[face.surprise_likelihood])
             num_faces += 1
-            avg = ((num_faces - 1) * (avg) + temp) / num_faces
+        avg = ((num_faces - 1) * (avg) + temp) / num_faces
+
+        # Prints average of facial data
         print(avg)
         num_faces = 0
         temp = 0
