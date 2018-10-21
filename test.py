@@ -46,12 +46,5 @@ if __name__ == '__main__':
         print('Faces:')
 
         for face in faces:
-            print('anger: {}'.format(likelihood_name[face.anger_likelihood]))
-            print('joy: {}'.format(likelihood_name[face.joy_likelihood]))
-            print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
+            print(max(likelihood_name[face.anger_likelihood], likelihood_name[face.joy_likelihood], likelihood_name[face.surprise_likelihood]))
             print('confidence: {}'.format(face.detection_confidence))
-
-            vertices = (['({},{})'.format(vertex.x, vertex.y)
-                         for vertex in face.bounding_poly.vertices])
-            print('face bounds: {}'.format(','.join(vertices)))
-
