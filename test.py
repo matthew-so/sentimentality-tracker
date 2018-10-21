@@ -42,8 +42,7 @@ if __name__ == '__main__':
         faces = response.face_annotations
 
         # Names of likelihood from google.cloud.vision.enums
-        likelihood_name = ('UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE',
-                           'LIKELY', 'VERY_LIKELY')
+        likelihood_name = (-1, 0, 1, 2, 3, 4)
         print('Faces:')
 
         for face in faces:
