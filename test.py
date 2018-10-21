@@ -105,7 +105,6 @@ if __name__ == '__main__':
             avg = ((num_faces - 1) * (avg) + temp) / num_faces
             num_faces += 1
 
-
         # Prints average of facial data
         print(avg)
         num_faces = 0
